@@ -1,19 +1,31 @@
+import zoologico.animais.Animal;
+import zoologico.animais.Ave;
 import zoologico.animais.Mamifero;
+import zoologico.animais.Reptil;
 import zoologico.funcionario.Funcionario;
 import zoologico.gerenciamento.Zoologico;
 
 public class TesteZoologico {
     public static void main(String[] args) {
         Zoologico zoologico = new Zoologico();
-        Funcionario funcionario = new Funcionario(1, "jose", "Cuidador de mamiferos");
-        Mamifero animal = new Mamifero();
-        animal.setNome("gato");
-        animal.setEspecie("mamifero");
-        animal.setId(1);
-        animal.setTempoGestacao(1);
+        Funcionario cuidador = new Funcionario(1, "jose", "Cuidador de mamiferos");
+        Funcionario veterinario = new Funcionario(2, "Maria", "Veterinária");
 
-        zoologico.adicionarFuncionario(funcionario);
-        zoologico.adicionarAnimal(animal);
-        zoologico.cuidarAnimal(animal);
+        Mamifero leao = new Mamifero("leão", "mamifero");
+        Ave papagaio = new Ave("papagaio", "ave");
+        Reptil cobra = new Reptil("cobra", "reptil");
+
+        zoologico.adicionarAnimal(leao);
+        zoologico.adicionarAnimal(papagaio);
+        zoologico.adicionarAnimal(cobra);
+
+        zoologico.adicionarFuncionario(cuidador);
+        zoologico.adicionarFuncionario(veterinario);
+
+        zoologico.cuidarAnimal();
+
+        zoologico.alterarNomeAnimal(leao, "rei leão");
+        System.out.println("Total de animais: " + Animal.getTotalAnimais());
+
     }
 }

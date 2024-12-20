@@ -4,22 +4,28 @@ import zoologico.animais.Animal;
 import zoologico.animais.Mamifero;
 import zoologico.funcionario.Funcionario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zoologico {
-    List<Animal> animais;
-    List<Funcionario> funcionarios;
+    private List<Animal> animais;
+    private List<Funcionario> funcionarios;
+
+    public Zoologico() {
+        this.animais = new ArrayList<>();
+        this.funcionarios = new ArrayList<>();
+    }
 
     public void adicionarAnimal(Animal animal) {
         this.animais.add(animal);
-        Animal.setTotalAnimais(+1);
+        Animal.setTotalAnimais(animais.size());
     }
 
     public void adicionarFuncionario(Funcionario funcionario) {
         funcionarios.add(funcionario);
     }
 
-    public void cuidarAnimal(Mamifero mamifero) {
+    public void cuidarAnimal() {
         for (int i = 0; i < funcionarios.size(); i++){
             if (funcionarios.get(i).getEspecialidade().equals("Cuidador de mamiferos")){
                 for (int j = 0; j < animais.size(); j++) {
@@ -45,6 +51,7 @@ public class Zoologico {
 
     public void alterarNomeAnimal(Animal animal, String novoNome) {
         animal.setNome(novoNome);
+        System.out.println("O nome do animal foi alterado para: " + novoNome);
     }
 
 

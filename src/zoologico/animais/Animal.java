@@ -4,7 +4,13 @@ public abstract class Animal {
     private int id;
     private String nome;
     private String especie;
-    private static int totalAnimais;
+    private static int totalAnimais  = 0;
+
+    public Animal(String nome, String especie) {
+        this.id = ++totalAnimais;
+        this.nome = nome;
+        this.especie = especie;
+    }
 
     public void emitirSom(){
     }
