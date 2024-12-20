@@ -14,7 +14,7 @@ public class Funcionario {
     }
 
     public void cuidarAnimal(Animal animal) {
-        System.out.println("O funcionario está cuidando do animal " + animal.getNome());
+        System.out.println("O funcionario de especialidade " + especialidade + " está cuidando do animal " + animal.getNome());
     }
 
     public int getId() {

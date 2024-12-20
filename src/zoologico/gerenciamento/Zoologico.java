@@ -1,7 +1,6 @@
 package zoologico.gerenciamento;
 
 import zoologico.animais.Animal;
-import zoologico.animais.Mamifero;
 import zoologico.funcionario.Funcionario;
 
 import java.util.ArrayList;
@@ -27,21 +26,17 @@ public class Zoologico {
 
     public void cuidarAnimal() {
         for (int i = 0; i < funcionarios.size(); i++){
-            if (funcionarios.get(i).getEspecialidade().equals("Cuidador de mamiferos")){
-                for (int j = 0; j < animais.size(); j++) {
-                    if (animais.get(j).getEspecie().equals("Mamifero")){
+            for (int j = 0; j < animais.size(); j++) {
+                if (funcionarios.get(i).getEspecialidade().equals("Cuidador de mamiferos")) {
+                    if (animais.get(j).getEspecie().equals("Mamifero")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }
-                }
-            } else if (funcionarios.get(i).getEspecialidade().equals("veterinario")) {
-                for (int j = 0; j < animais.size(); j++) {
-                    if (animais.get(j).getEspecie().equals("reptil")){
+                } else if (funcionarios.get(i).getEspecialidade().equals("veterinario")) {
+                    if (animais.get(j).getEspecie().equals("reptil")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }
-                }
-            } else {
-                for (int j = 0; j < animais.size(); j++) {
-                    if (animais.get(j).getEspecie().equals("ave")){
+                } else if (funcionarios.get(i).getEspecialidade().equals("veterinario de aves")){
+                    if (animais.get(j).getEspecie().equals("ave")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }
                 }
@@ -53,7 +48,5 @@ public class Zoologico {
         animal.setNome(novoNome);
         System.out.println("O nome do animal foi alterado para: " + novoNome);
     }
-
-
 
 }

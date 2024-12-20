@@ -9,9 +9,10 @@ public class TesteZoologico {
     public static void main(String[] args) {
         Zoologico zoologico = new Zoologico();
         Funcionario cuidador = new Funcionario(1, "jose", "Cuidador de mamiferos");
-        Funcionario veterinario = new Funcionario(2, "Maria", "Veterinária");
+        Funcionario veterinario = new Funcionario(2, "Maria", "veterinario");
+        Funcionario veterinarioAves = new Funcionario(3, "Mario", "veterinario de aves");
 
-        Mamifero leao = new Mamifero("leão", "mamifero");
+        Mamifero leao = new Mamifero("leão", "Mamifero");
         Ave papagaio = new Ave("papagaio", "ave");
         Reptil cobra = new Reptil("cobra", "reptil");
 
@@ -21,6 +22,7 @@ public class TesteZoologico {
 
         zoologico.adicionarFuncionario(cuidador);
         zoologico.adicionarFuncionario(veterinario);
+        zoologico.adicionarFuncionario(veterinarioAves);
 
         zoologico.cuidarAnimal();
 
