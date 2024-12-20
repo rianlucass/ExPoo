@@ -12,8 +12,7 @@ public abstract class Animal {
         this.especie = especie;
     }
 
-    public void emitirSom(){
-    }
+    public abstract void emitirSom();
 
     public int getId() {
         return id;
