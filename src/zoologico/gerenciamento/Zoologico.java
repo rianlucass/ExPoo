@@ -6,6 +6,8 @@ import zoologico.funcionario.Funcionario;
 import java.util.ArrayList;
 import java.util.List;
 
+import static zoologico.funcionario.Funcionario.*;
+
 public class Zoologico {
     private List<Animal> animais;
     private List<Funcionario> funcionarios;
@@ -27,15 +29,15 @@ public class Zoologico {
     public void cuidarAnimal() {
         for (int i = 0; i < funcionarios.size(); i++){
             for (int j = 0; j < animais.size(); j++) {
-                if (funcionarios.get(i).getEspecialidade().equals("Cuidador de mamiferos")) {
+                if (funcionarios.get(i).getEspecialidade().equals(CUIDADOR)) {
                     if (animais.get(j).getEspecie().equals("Mamifero")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }
-                } else if (funcionarios.get(i).getEspecialidade().equals("veterinario")) {
+                } else if (funcionarios.get(i).getEspecialidade().equals(VETERINARIO)) {
                     if (animais.get(j).getEspecie().equals("reptil")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }
-                } else if (funcionarios.get(i).getEspecialidade().equals("veterinario de aves")){
+                } else if (funcionarios.get(i).getEspecialidade().equals(VET_AVES)){
                     if (animais.get(j).getEspecie().equals("ave")) {
                         funcionarios.get(i).cuidarAnimal(animais.get(j));
                     }

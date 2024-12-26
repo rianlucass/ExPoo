@@ -8,9 +8,9 @@ import zoologico.gerenciamento.Zoologico;
 public class TesteZoologico {
     public static void main(String[] args) {
         Zoologico zoologico = new Zoologico();
-        Funcionario cuidador = new Funcionario(1, "jose", "Cuidador de mamiferos");
-        Funcionario veterinario = new Funcionario(2, "Maria", "veterinario");
-        Funcionario veterinarioAves = new Funcionario(3, "Mario", "veterinario de aves");
+        Funcionario cuidador = new Funcionario(1, "jose", Funcionario.CUIDADOR);
+        Funcionario veterinario = new Funcionario(2, "Maria", Funcionario.VETERINARIO);
+        Funcionario veterinarioAves = new Funcionario(3, "Mario", Funcionario.VET_AVES);
 
         Mamifero leao = new Mamifero("leão", "Mamifero");
         Ave papagaio = new Ave("papagaio", "ave");

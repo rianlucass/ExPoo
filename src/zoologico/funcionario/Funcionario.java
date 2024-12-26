@@ -6,6 +6,9 @@ public class Funcionario {
     private int id;
     private String nome;
     private String especialidade;
+    public static final String CUIDADOR = "Cuidador de mamiferos";
+    public static final String VETERINARIO = "veterinario";
+    public static final String VET_AVES = "veterinario de aves";
 
     public Funcionario(int id, String nome, String especialidade) {
         this.id = id;
@@ -40,4 +43,6 @@ public class Funcionario {
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
+
+
 }
